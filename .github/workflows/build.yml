@@ -1,4 +1,4 @@
-name: Flutter Build
+name: Build
 
 on:
   push:
@@ -19,3 +19,8 @@ jobs:
         channel: 'stable'
     - run: flutter pub get
     - run: flutter build apk --release
+
+    - uses: actions/upload-artifact@master
+      with:
+        name: Generated Files
+        path: build/app/outputs/apk/release
