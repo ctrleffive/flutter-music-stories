@@ -1,9 +1,9 @@
-name: Flutter CI
+name: Flutter Test
 
 on: [push]
 
 jobs:
-  Test & Build:
+  Test:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,4 +16,3 @@ jobs:
         channel: 'stable'
     - run: flutter pub get
     - run: flutter test
-    - run: flutter build apk --release
