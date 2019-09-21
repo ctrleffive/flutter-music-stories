@@ -1,0 +1,19 @@
+name: music_stories
+description: Music tracks story image creator. Easily create stories for WhatsApp, Instagram &amp; Facebook with minimal designs &amp; album cover.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
