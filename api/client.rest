@@ -1,0 +1,10 @@
+### API Client
+
+@apiVersion = 1
+@apiBase = https://live-api.chandujs.in/v{{apiVersion}}
+
+# User Data Sync
+# @name sync
+POST {{apiBase}}/sync
+
+{}
