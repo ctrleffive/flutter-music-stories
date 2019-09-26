@@ -10,8 +10,22 @@
 /// 8. Components (eg. custom_button.dart)
 /// 9. Pages (eg. home.dart)
 
-import 'package:flutter/material.dart';
+import 'package:catcher/catcher_plugin.dart';
+
+import 'package:music_stories/src/constants/keys.dart';
 
 import 'package:music_stories/src/app.dart';
 
-void main() => runApp(App());
+void main() {
+  Catcher(
+    App(),
+    debugConfig: CatcherOptions(
+      DialogReportMode(),
+      [ConsoleHandler()],
+    ),
+    releaseConfig: CatcherOptions(
+      DialogReportMode(),
+      [SentryHandler(KeysConstant.sentryDsn)],
+    ),
+  );
+}
