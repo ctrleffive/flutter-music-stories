@@ -6,11 +6,11 @@ void main() {
   group('Search validator tests.', () {
     test('Testing search input as null value', () {
       final String result = InputValidators.search(null);
-      expect(result, 'Username should not be empty!');
+      expect(result, 'Search term should not be empty!');
     });
     test('Testing search input as empty string.', () {
       final String result = InputValidators.search('');
-      expect(result, 'Username should not be empty!');
+      expect(result, 'Search term should not be empty!');
     });
     test('Testing search input with valid input.', () {
       final String result = InputValidators.search('ctrleffive');
