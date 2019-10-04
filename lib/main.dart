@@ -23,8 +23,6 @@ void main() {
   // I don't like the way catcher showing error logs in the console. 😐
 
   if (kReleaseMode) {
-    runApp(App());
-  } else {
     Catcher(
       App(),
       releaseConfig: CatcherOptions(
@@ -32,5 +30,7 @@ void main() {
         [SentryHandler(KeysConstant.sentryDsn)],
       ),
     );
+  } else {
+    runApp(App());
   }
 }
