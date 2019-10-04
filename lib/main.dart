@@ -11,6 +11,7 @@
 /// 9. Pages (eg. home.dart)
 
 import 'package:flutter/widgets.dart';
+import 'package:flutter/foundation.dart';
 
 import 'package:catcher/catcher_plugin.dart';
 
@@ -20,12 +21,8 @@ import 'package:music_stories/src/app.dart';
 
 void main() {
   // I don't like the way catcher showing error logs in the console. 😐
-  bool isDebug = false;
-  // Assert works only in debug mode. So if it is running in production,
-  // the `isDebug` variable will be false and excecute catcher code.
-  assert(isDebug = true);
-  
-  if (isDebug) {
+
+  if (kReleaseMode) {
     runApp(App());
   } else {
     Catcher(
