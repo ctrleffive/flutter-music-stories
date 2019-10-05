@@ -14,6 +14,7 @@ mixin StylesConstant {
         color: Colors.black87,
       ),
     ),
+    fontFamily: 'Montserrat'
   );
 
   static const TextStyle sectionHead = TextStyle(
