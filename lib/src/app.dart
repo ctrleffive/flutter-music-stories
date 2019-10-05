@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:catcher/core/catcher.dart';
 
+import 'package:music_stories/src/constants/styles.dart';
+
 import 'package:music_stories/src/views/pages/root.dart';
 
 /// Material entry point of the app.
@@ -10,6 +12,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       navigatorKey: Catcher.navigatorKey,
+      theme: StylesConstant.appTheme,
       home: RootPage(),
     );
   }
