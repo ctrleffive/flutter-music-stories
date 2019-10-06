@@ -6,7 +6,11 @@ import 'package:music_stories/src/constants/styles.dart';
 import 'package:music_stories/src/models/quick_access.dart';
 
 List<QuickAccessModel> _items = [];
-int _activeIndex = 0;
+List<String> _categories = [];
+
+final PageController _categoryScrollController = PageController(
+  initialPage: 1,
+);
 
 class QuickAccessScroll extends StatefulWidget {
   final List<QuickAccessModel> items;
@@ -21,6 +25,8 @@ class QuickAccessScroll extends StatefulWidget {
 }
 
 class _QuickAccessScrollState extends State<QuickAccessScroll> {
+  final
+
   @override
   void initState() {
     _items = this.widget.items;
@@ -48,17 +54,15 @@ class _HeadScroll extends StatelessWidget {
     return SizedBox(
       height: 50,
       child: ListView.builder(
-        controller: PageController(
-          initialPage: _activeIndex,
-        ),
-        itemCount: QuickAccessCategry.values.length,
+        controller: _categoryScrollController,
+        itemCount: _categories.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int index) {
           return AnimatedOpacity(
-            opacity: _activeIndex == index ? 1 : 0.1,
+            opacity: 0 == index ? 1 : 0.1,
             duration: Duration(milliseconds: 200),
             child: Text(
-              QuickAccessCategry.values[index].toString(),
+              _categories[index],
               style: StylesConstant.sectionHead,
             ),
           );

@@ -2,7 +2,7 @@ class QuickAccessModel {
   String trackName;
   String artistName;
   String albumArt;
-  QuickAccessCategry categry;
+  String categry;
 
   QuickAccessModel({
     this.categry,
@@ -10,9 +10,4 @@ class QuickAccessModel {
     this.trackName,
     this.artistName,
   });
-}
-
-enum QuickAccessCategry {
-  recent,
-  favourites,
 }

@@ -1,18 +1,10 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
-import 'package:music_stories/src/models/quick_access.dart';
+import 'package:music_stories/src/constants/data.dart';
 
 import 'package:music_stories/src/views/components/quick_access.dart';
 
 class RootPage extends StatelessWidget {
-  final List<QuickAccessModel> quickAccessItems = [
-    QuickAccessModel(
-      categry: QuickAccessCategry.recent,
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +28,7 @@ class RootPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              QuickAccessScroll(this.quickAccessItems),
+              QuickAccessScroll(DataConstant.quickAccessItems),
             ],
           ),
         ),
